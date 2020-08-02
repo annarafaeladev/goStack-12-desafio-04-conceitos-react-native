@@ -15,10 +15,16 @@ export default function App() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    api.get("repositories").then((response) => {
-      setList(response.data);
-    });
+    getData();
   }, []);
+
+  async function getData() {
+    const result = await api.get("repositories");
+
+    if (result.status) {
+      setList(result.data);
+    }
+  }
 
   async function handleLikeRepository(id) {
     await api.post(`repositories/${id}/like`);
