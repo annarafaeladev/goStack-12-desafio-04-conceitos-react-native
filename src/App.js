@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "./services/api";
 import { Card } from "./components";
-import {
-  SafeAreaView,
-  View,
-  ActivityIndicator,
-  FlatList,
-  Text,
-  StatusBar,
-  StyleSheet,
-} from "react-native";
+import { SafeAreaView, FlatList, StatusBar, StyleSheet } from "react-native";
 
 export default function App() {
   const [list, setList] = useState([]);
